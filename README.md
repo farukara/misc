@@ -1,5 +1,6 @@
 # misc
-Miscellaneous Projects
+### Miscellaneous Projects
 
 1. Basic dictionary using Tkinter GUI
 2. My brew packages 
+3. deleting repetitve words from a text file
