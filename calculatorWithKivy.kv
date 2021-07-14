@@ -1,0 +1,97 @@
+<Button>
+    size_hint: (0.2, 0.2)
+    background_color: (2/255, 10/255, 24/255, 1)
+    background_normal: ""
+    font_size: 80
+    fd
+    
+<CalculatorWidget>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        TextInput:
+            id: input_box
+            text: "0"
+            font_size: 150
+            multiline: False
+            halign: "right"
+            size_hint: (1, 0.19)
+            background_color: (20/255, 20/255, 30/255, 1)
+            foreground_color: (1, 1, 1, 1)
+            background_normal: ""
+
+        GridLayout:
+            cols:4
+            rows:5
+            
+            #row 1
+            Button:
+                text: " "
+            Button:
+                text: "C"
+                on_press: root.clear()
+            Button:
+                text: "\u00AB" #delete button
+                on_press: root.delete_button_press()
+            Button:
+                text: "\u00F7" #division
+                background_color: (14/255, 73/255, 176/255)
+                on_press: root.arithmetic_button_press("/")
+            #row 2
+            Button:
+                id: button7
+                text: "7"
+                on_press: root.number_press("7")
+            Button:
+                text: "8"
+                on_press: root.number_press("8")
+            Button:
+                text: "9"
+                on_press: root.number_press("9")
+            Button:
+                text: "*"
+                background_color: (14/255, 73/255, 176/255)
+                on_press: root.arithmetic_button_press("*")
+            #row 3
+            Button:
+                text: "4"
+                on_press: root.number_press("4")
+            Button:
+                text: "5"
+                on_press: root.number_press("5")
+            Button:
+                text: "6"
+                on_press: root.number_press("6")
+            Button:
+                text: "\u2212" #minus
+                background_color: (14/255, 73/255, 176/255)
+                on_press: root.arithmetic_button_press("-")
+            #row 4
+            Button:
+                text: "1"
+                on_press: root.number_press("1")
+            Button:
+                text: "2"
+                on_press: root.number_press("2")
+            Button:
+                text: "3"
+                on_press: root.number_press("3")
+            Button:
+                text: "+"
+                background_color: (14/255, 73/255, 176/255)
+                on_press: root.arithmetic_button_press("+")
+            #row 5
+            Button:
+                text: "+/-"
+                on_press: root.sign_button_press()
+            Button:
+                text: "0"
+                on_press: root.number_press("0")
+            Button:
+                text: "."
+                on_press: root.dot_button_press()
+            Button:
+                text: "="
+                background_color: (14/255, 73/255, 176/255)
+                on_press: root.equal_button_press()
